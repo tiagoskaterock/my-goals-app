@@ -1,0 +1,1 @@
+- Hey guys, for everyone that has a problem with starting the Expo app on your mobile, simply run the command npx expo start --tunnel  and it should work. Good luck :)
