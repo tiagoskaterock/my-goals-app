@@ -1,33 +1,24 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello React Native!</Text>
-      <Text style={styles.message}>
-        I am Tiago, a new programmer!
-      </Text>
+    <View style={styles.appContainer}>
+      <View>
+        <TextInput placeholder="Enter your goal" />
+        <Button title="Add Goal" />
+      </View>
 
-      <Text style={styles.message}>
-        A like to develop stuff!
-      </Text>
-      <Button title="Click me" />
+      <View>
+        <Text>
+          List of goals...
+        </Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  message: {
-    padding:16,
-    margin:16,
-    borderWidth: 3,
-    borderRadius: 10,
-    borderColor: '#ff0000',
+  appContainer: {
+    padding: 50
   }
 });
