@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { 
+  Button, 
+  StyleSheet, 
+  Text, 
+  TextInput, 
+  View, 
+  ScrollView 
+} from 'react-native';
 
 export default function App() {
 
@@ -32,16 +39,19 @@ export default function App() {
       </View>
 
       <View style={styles.goalsContainer}>
-        {courserGoals.map((goal) =>
-          <View style={styles.goalItemWrapper}>
-            <Text
-              style={styles.goalItem}
-              key={goal}>
-                {goal}
-              </Text>
-          </View>
-        )}
+        <ScrollView>
+          {courserGoals.map((goal) =>
+            <View style={styles.goalItemWrapper}>
+              <Text
+                style={styles.goalItem}
+                key={goal}>
+                  {goal}
+                </Text>
+            </View>
+          )}
+        </ScrollView>
       </View>
+      
     </View>
   );
 }
