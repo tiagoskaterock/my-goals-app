@@ -5,23 +5,26 @@ import {
   Text, 
   TextInput, 
   View, 
-  ScrollView 
+  FlatList,
 } from 'react-native';
 
 export default function App() {
 
-  const[enteredGoalText, setEnteredGoalText] = new useState('');
-  const[courserGoals, setCourseGoals] = new useState([]);
+  const [enteredGoalText, setEnteredGoalText] = useState('');
+  const [courseGoals, setCourseGoals] = useState([]);
 
   function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText)
+    setEnteredGoalText(enteredText);
   }
 
   function addGoalHandler() {
     setCourseGoals(currentCourseGoals => [
       ...currentCourseGoals, 
-      enteredGoalText
-    ])
+      {
+        text: enteredGoalText,
+        id: Math.random().toString()
+      }
+    ]);
   }
 
   return (
@@ -39,19 +42,22 @@ export default function App() {
       </View>
 
       <View style={styles.goalsContainer}>
-        <ScrollView>
-          {courserGoals.map((goal) =>
-            <View style={styles.goalItemWrapper}>
-              <Text
-                style={styles.goalItem}
-                key={goal}>
-                  {goal}
+        <FlatList 
+          data={courseGoals}
+          renderItem={({ item }) => {
+            return (
+              <View style={styles.goalItemWrapper}>
+                <Text style={styles.goalItem}>
+                  {item.text}
                 </Text>
-            </View>
-          )}
-        </ScrollView>
+              </View>
+            );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+        />
       </View>
-      
     </View>
   );
 }
@@ -76,7 +82,7 @@ const styles = StyleSheet.create({
     borderColor: '#cccccc',
     width: '70%',
     marginRight: 8,
-    padding: 8
+    padding: 8,
   },
   goalsContainer: {
     flex: 5,
@@ -86,8 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: '#5e0acc',
     padding: 8,
-  }
-  ,
+  },
   goalItem: {
     color: 'white',
     textAlign: 'center',
