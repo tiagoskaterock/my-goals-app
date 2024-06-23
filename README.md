@@ -1,14 +1,37 @@
-- Hey guys, for everyone that has a problem with starting the Expo app on your mobile, simply run the command 
+<h1 align="center">My Goals App</h1>
 
-Try:
-# npm start (it worked last time for emulator)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=reactnative" alt="Dev icons" />
+</p>
 
-# npx expo start --tunnel (didn't work anymore)
+Este é um projeto de estudos em React Native, uma aplicação de cadastro de metas pessoais (goals) no estilo "todo list". A aplicação permite adicionar e remover tarefas em dispositivos móveis Android e iOS, utilizando estilos personalizados e um modal para melhorar a experiência do usuário (UX). Até o momento, por se tratar de um projeto de estudos, em React Native, não existe armazenamento de dados. 
 
-and it should work. Good luck :)
+## ✨ Funcionalidades
 
-If it runs with 
+- ➕ Adicionar goals
+- ❌ Remover goals
+- 🖼️ Modal personalizado para interação do usuário
+- 🎨 Estilização customizada
 
-# sudo npx expo start --tunnel 
+## 🛠️ Tecnologias Utilizadas
 
-it will search for another place as root and will not work
+- ⚛️ React Native
+- 🌐 Expo
+- 📱 Componentes nativos de Android e iOS
+
+## 📋 Pré-requisitos
+
+- 🌐 Node.js
+- 🚀 Expo CLI
+- 📱 Emulador Android/iOS ou dispositivo físico
+
+## ⚙️ Instalação
+
+- Clone o repositório:
+- cd projeto_clonado
+- npm install
+- npm run dev
+
+<p align="center">
+  <img src="1.jpeg" alt="My Goals App" />
+</p>
